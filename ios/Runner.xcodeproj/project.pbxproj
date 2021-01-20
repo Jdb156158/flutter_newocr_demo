@@ -3,12 +3,38 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07F9A06025B80CA600051888 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A05F25B80CA600051888 /* SwiftViewController.swift */; };
+		07F9A08525B80CDC00051888 /* UIColor+UIColorFromRGB.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A06225B80CDC00051888 /* UIColor+UIColorFromRGB.m */; };
+		07F9A08625B80CDC00051888 /* UIImageView+ContentFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A06325B80CDC00051888 /* UIImageView+ContentFrame.m */; };
+		07F9A08725B80CDC00051888 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A06425B80CDC00051888 /* UIView+Frame.m */; };
+		07F9A08825B80CDC00051888 /* UIColor+HexRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A06625B80CDC00051888 /* UIColor+HexRepresentation.m */; };
+		07F9A08925B80CDC00051888 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A06B25B80CDC00051888 /* UIImage+fixOrientation.m */; };
+		07F9A08A25B80CDC00051888 /* MTGeometry.c in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A06E25B80CDC00051888 /* MTGeometry.c */; };
+		07F9A08B25B80CDC00051888 /* MMOpenCVHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A06F25B80CDC00051888 /* MMOpenCVHelper.mm */; };
+		07F9A08C25B80CDC00051888 /* MMCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A07025B80CDC00051888 /* MMCropView.m */; };
+		07F9A08D25B80CDC00051888 /* CSJScanResultViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A07425B80CDC00051888 /* CSJScanResultViewController.mm */; };
+		07F9A08E25B80CDC00051888 /* CSJScanIDCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A07725B80CDC00051888 /* CSJScanIDCardViewController.m */; };
+		07F9A08F25B80CDC00051888 /* CSJScanResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F9A07825B80CDC00051888 /* CSJScanResultViewController.xib */; };
+		07F9A09025B80CDC00051888 /* CSJIDScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A07925B80CDC00051888 /* CSJIDScanView.m */; };
+		07F9A09125B80CDC00051888 /* VCLabelSticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A07C25B80CDC00051888 /* VCLabelSticker.swift */; };
+		07F9A09225B80CDC00051888 /* VCImageSticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A07D25B80CDC00051888 /* VCImageSticker.swift */; };
+		07F9A09325B80CDC00051888 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07F9A07E25B80CDC00051888 /* Images.xcassets */; };
+		07F9A09425B80CDC00051888 /* VCBaseSticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A07F25B80CDC00051888 /* VCBaseSticker.swift */; };
+		07F9A09525B80CDC00051888 /* VCStickerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A08025B80CDC00051888 /* VCStickerUtils.swift */; };
+		07F9A09625B80CDC00051888 /* NewCropViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A08225B80CDC00051888 /* NewCropViewController.mm */; };
+		07F9A09725B80CDC00051888 /* NewCropViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F9A08325B80CDC00051888 /* NewCropViewController.xib */; };
+		07F9A0A125B80D0D00051888 /* Test2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F9A09925B80D0D00051888 /* Test2ViewController.xib */; };
+		07F9A0A225B80D0D00051888 /* Test2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A09A25B80D0D00051888 /* Test2ViewController.m */; };
+		07F9A0A325B80D0D00051888 /* WebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A09B25B80D0D00051888 /* WebVC.m */; };
+		07F9A0A425B80D0D00051888 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A09E25B80D0D00051888 /* MainViewController.m */; };
+		07F9A0A525B80D0D00051888 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A09F25B80D0D00051888 /* TestViewController.m */; };
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
+		8EBAD6E54B5C8EEEAB47A594 /* libPods-Runner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC3CFDB9E06924C1EC8D95C /* libPods-Runner.a */; };
 		978B8F6F1D3862AE00F588F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFD8EE1D35381100E5BB4D /* AppDelegate.m */; };
 		97C146F31CF9000F007C117D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C146F21CF9000F007C117D /* main.m */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
@@ -30,9 +56,52 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		07F9A05E25B80CA500051888 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
+		07F9A05F25B80CA600051888 /* SwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
+		07F9A06225B80CDC00051888 /* UIColor+UIColorFromRGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UIColorFromRGB.m"; sourceTree = "<group>"; };
+		07F9A06325B80CDC00051888 /* UIImageView+ContentFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ContentFrame.m"; sourceTree = "<group>"; };
+		07F9A06425B80CDC00051888 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		07F9A06525B80CDC00051888 /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+fixOrientation.h"; sourceTree = "<group>"; };
+		07F9A06625B80CDC00051888 /* UIColor+HexRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexRepresentation.m"; sourceTree = "<group>"; };
+		07F9A06725B80CDC00051888 /* UIColor+UIColorFromRGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIColorFromRGB.h"; sourceTree = "<group>"; };
+		07F9A06825B80CDC00051888 /* UIImageView+ContentFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ContentFrame.h"; sourceTree = "<group>"; };
+		07F9A06925B80CDC00051888 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		07F9A06A25B80CDC00051888 /* UIColor+HexRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexRepresentation.h"; sourceTree = "<group>"; };
+		07F9A06B25B80CDC00051888 /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+fixOrientation.m"; sourceTree = "<group>"; };
+		07F9A06D25B80CDC00051888 /* MMOpenCVHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMOpenCVHelper.h; sourceTree = "<group>"; };
+		07F9A06E25B80CDC00051888 /* MTGeometry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MTGeometry.c; sourceTree = "<group>"; };
+		07F9A06F25B80CDC00051888 /* MMOpenCVHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMOpenCVHelper.mm; sourceTree = "<group>"; };
+		07F9A07025B80CDC00051888 /* MMCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCropView.m; sourceTree = "<group>"; };
+		07F9A07125B80CDC00051888 /* MTGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGeometry.h; sourceTree = "<group>"; };
+		07F9A07225B80CDC00051888 /* MMCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCropView.h; sourceTree = "<group>"; };
+		07F9A07425B80CDC00051888 /* CSJScanResultViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CSJScanResultViewController.mm; sourceTree = "<group>"; };
+		07F9A07525B80CDC00051888 /* CSJIDScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSJIDScanView.h; sourceTree = "<group>"; };
+		07F9A07625B80CDC00051888 /* CSJScanResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSJScanResultViewController.h; sourceTree = "<group>"; };
+		07F9A07725B80CDC00051888 /* CSJScanIDCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSJScanIDCardViewController.m; sourceTree = "<group>"; };
+		07F9A07825B80CDC00051888 /* CSJScanResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSJScanResultViewController.xib; sourceTree = "<group>"; };
+		07F9A07925B80CDC00051888 /* CSJIDScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSJIDScanView.m; sourceTree = "<group>"; };
+		07F9A07A25B80CDC00051888 /* CSJScanIDCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSJScanIDCardViewController.h; sourceTree = "<group>"; };
+		07F9A07C25B80CDC00051888 /* VCLabelSticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCLabelSticker.swift; sourceTree = "<group>"; };
+		07F9A07D25B80CDC00051888 /* VCImageSticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCImageSticker.swift; sourceTree = "<group>"; };
+		07F9A07E25B80CDC00051888 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		07F9A07F25B80CDC00051888 /* VCBaseSticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCBaseSticker.swift; sourceTree = "<group>"; };
+		07F9A08025B80CDC00051888 /* VCStickerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCStickerUtils.swift; sourceTree = "<group>"; };
+		07F9A08225B80CDC00051888 /* NewCropViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NewCropViewController.mm; sourceTree = "<group>"; };
+		07F9A08325B80CDC00051888 /* NewCropViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewCropViewController.xib; sourceTree = "<group>"; };
+		07F9A08425B80CDC00051888 /* NewCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCropViewController.h; sourceTree = "<group>"; };
+		07F9A09825B80D0D00051888 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		07F9A09925B80D0D00051888 /* Test2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Test2ViewController.xib; sourceTree = "<group>"; };
+		07F9A09A25B80D0D00051888 /* Test2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test2ViewController.m; sourceTree = "<group>"; };
+		07F9A09B25B80D0D00051888 /* WebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
+		07F9A09C25B80D0D00051888 /* Test2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test2ViewController.h; sourceTree = "<group>"; };
+		07F9A09D25B80D0D00051888 /* WebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebVC.h; sourceTree = "<group>"; };
+		07F9A09E25B80D0D00051888 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		07F9A09F25B80D0D00051888 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		07F9A0A025B80D0D00051888 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
+		618FA15B1EB53A7C28E0D46E /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
 		7AFFD8ED1D35381100E5BB4D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7AFFD8EE1D35381100E5BB4D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -44,6 +113,9 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFC3CFDB9E06924C1EC8D95C /* libPods-Runner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Runner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5CC8E990F92D019EE243DA0 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
+		F98EB806B567F3710CA0058E /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,12 +123,97 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EBAD6E54B5C8EEEAB47A594 /* libPods-Runner.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07F9A06125B80CDC00051888 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				07F9A06225B80CDC00051888 /* UIColor+UIColorFromRGB.m */,
+				07F9A06325B80CDC00051888 /* UIImageView+ContentFrame.m */,
+				07F9A06425B80CDC00051888 /* UIView+Frame.m */,
+				07F9A06525B80CDC00051888 /* UIImage+fixOrientation.h */,
+				07F9A06625B80CDC00051888 /* UIColor+HexRepresentation.m */,
+				07F9A06725B80CDC00051888 /* UIColor+UIColorFromRGB.h */,
+				07F9A06825B80CDC00051888 /* UIImageView+ContentFrame.h */,
+				07F9A06925B80CDC00051888 /* UIView+Frame.h */,
+				07F9A06A25B80CDC00051888 /* UIColor+HexRepresentation.h */,
+				07F9A06B25B80CDC00051888 /* UIImage+fixOrientation.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		07F9A06C25B80CDC00051888 /* OpenCvCtrl */ = {
+			isa = PBXGroup;
+			children = (
+				07F9A06D25B80CDC00051888 /* MMOpenCVHelper.h */,
+				07F9A06E25B80CDC00051888 /* MTGeometry.c */,
+				07F9A06F25B80CDC00051888 /* MMOpenCVHelper.mm */,
+				07F9A07025B80CDC00051888 /* MMCropView.m */,
+				07F9A07125B80CDC00051888 /* MTGeometry.h */,
+				07F9A07225B80CDC00051888 /* MMCropView.h */,
+			);
+			path = OpenCvCtrl;
+			sourceTree = "<group>";
+		};
+		07F9A07325B80CDC00051888 /* CSJScanl */ = {
+			isa = PBXGroup;
+			children = (
+				07F9A07425B80CDC00051888 /* CSJScanResultViewController.mm */,
+				07F9A07525B80CDC00051888 /* CSJIDScanView.h */,
+				07F9A07625B80CDC00051888 /* CSJScanResultViewController.h */,
+				07F9A07725B80CDC00051888 /* CSJScanIDCardViewController.m */,
+				07F9A07825B80CDC00051888 /* CSJScanResultViewController.xib */,
+				07F9A07925B80CDC00051888 /* CSJIDScanView.m */,
+				07F9A07A25B80CDC00051888 /* CSJScanIDCardViewController.h */,
+			);
+			path = CSJScanl;
+			sourceTree = "<group>";
+		};
+		07F9A07B25B80CDC00051888 /* VCSticker */ = {
+			isa = PBXGroup;
+			children = (
+				07F9A07C25B80CDC00051888 /* VCLabelSticker.swift */,
+				07F9A07D25B80CDC00051888 /* VCImageSticker.swift */,
+				07F9A07E25B80CDC00051888 /* Images.xcassets */,
+				07F9A07F25B80CDC00051888 /* VCBaseSticker.swift */,
+				07F9A08025B80CDC00051888 /* VCStickerUtils.swift */,
+			);
+			path = VCSticker;
+			sourceTree = "<group>";
+		};
+		07F9A08125B80CDC00051888 /* GropCtrl */ = {
+			isa = PBXGroup;
+			children = (
+				07F9A08225B80CDC00051888 /* NewCropViewController.mm */,
+				07F9A08325B80CDC00051888 /* NewCropViewController.xib */,
+				07F9A08425B80CDC00051888 /* NewCropViewController.h */,
+			);
+			path = GropCtrl;
+			sourceTree = "<group>";
+		};
+		0DB3C11F0B75AEABEF28A8BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				618FA15B1EB53A7C28E0D46E /* Pods-Runner.debug.xcconfig */,
+				F98EB806B567F3710CA0058E /* Pods-Runner.release.xcconfig */,
+				E5CC8E990F92D019EE243DA0 /* Pods-Runner.profile.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		37803410CBFC5F030B6C0B94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFC3CFDB9E06924C1EC8D95C /* libPods-Runner.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9740EEB11CF90186004384FC /* Flutter */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,7 +231,8 @@
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
 				97C146EF1CF9000F007C117D /* Products */,
-				CF3B75C9A7D2FA2A4C99F110 /* Frameworks */,
+				0DB3C11F0B75AEABEF28A8BC /* Pods */,
+				37803410CBFC5F030B6C0B94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,8 +247,22 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				07F9A06125B80CDC00051888 /* Category */,
+				07F9A07325B80CDC00051888 /* CSJScanl */,
+				07F9A08125B80CDC00051888 /* GropCtrl */,
+				07F9A06C25B80CDC00051888 /* OpenCvCtrl */,
+				07F9A07B25B80CDC00051888 /* VCSticker */,
 				7AFFD8ED1D35381100E5BB4D /* AppDelegate.h */,
 				7AFFD8EE1D35381100E5BB4D /* AppDelegate.m */,
+				07F9A0A025B80D0D00051888 /* MainViewController.h */,
+				07F9A09E25B80D0D00051888 /* MainViewController.m */,
+				07F9A09C25B80D0D00051888 /* Test2ViewController.h */,
+				07F9A09A25B80D0D00051888 /* Test2ViewController.m */,
+				07F9A09925B80D0D00051888 /* Test2ViewController.xib */,
+				07F9A09825B80D0D00051888 /* TestViewController.h */,
+				07F9A09F25B80D0D00051888 /* TestViewController.m */,
+				07F9A09D25B80D0D00051888 /* WebVC.h */,
+				07F9A09B25B80D0D00051888 /* WebVC.m */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
 				97C146FD1CF9000F007C117D /* Assets.xcassets */,
 				97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */,
@@ -98,6 +270,8 @@
 				97C146F11CF9000F007C117D /* Supporting Files */,
 				1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */,
 				1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */,
+				07F9A05F25B80CA600051888 /* SwiftViewController.swift */,
+				07F9A05E25B80CA500051888 /* Runner-Bridging-Header.h */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -117,12 +291,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97C147051CF9000F007C117D /* Build configuration list for PBXNativeTarget "Runner" */;
 			buildPhases = (
+				895AE2FAE3EDD8BED435E113 /* [CP] Check Pods Manifest.lock */,
 				9740EEB61CF901F6004384FC /* Run Script */,
 				97C146EA1CF9000F007C117D /* Sources */,
 				97C146EB1CF9000F007C117D /* Frameworks */,
 				97C146EC1CF9000F007C117D /* Resources */,
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
+				EE86D43E0C3713E42534D03B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,6 +320,7 @@
 				TargetAttributes = {
 					97C146ED1CF9000F007C117D = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 1230;
 					};
 				};
 			};
@@ -171,7 +348,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
+				07F9A0A125B80D0D00051888 /* Test2ViewController.xib in Resources */,
+				07F9A08F25B80CDC00051888 /* CSJScanResultViewController.xib in Resources */,
+				07F9A09725B80CDC00051888 /* NewCropViewController.xib in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
+				07F9A09325B80CDC00051888 /* Images.xcassets in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
 			);
@@ -194,6 +375,28 @@
 			shellPath = /bin/sh;
 			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" embed_and_thin";
 		};
+		895AE2FAE3EDD8BED435E113 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Runner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9740EEB61CF901F6004384FC /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -208,6 +411,23 @@
 			shellPath = /bin/sh;
 			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build";
 		};
+		EE86D43E0C3713E42534D03B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -215,9 +435,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F9A08525B80CDC00051888 /* UIColor+UIColorFromRGB.m in Sources */,
+				07F9A06025B80CA600051888 /* SwiftViewController.swift in Sources */,
+				07F9A09225B80CDC00051888 /* VCImageSticker.swift in Sources */,
+				07F9A08625B80CDC00051888 /* UIImageView+ContentFrame.m in Sources */,
+				07F9A08E25B80CDC00051888 /* CSJScanIDCardViewController.m in Sources */,
+				07F9A08725B80CDC00051888 /* UIView+Frame.m in Sources */,
+				07F9A0A525B80D0D00051888 /* TestViewController.m in Sources */,
+				07F9A08A25B80CDC00051888 /* MTGeometry.c in Sources */,
+				07F9A09525B80CDC00051888 /* VCStickerUtils.swift in Sources */,
+				07F9A09025B80CDC00051888 /* CSJIDScanView.m in Sources */,
+				07F9A08B25B80CDC00051888 /* MMOpenCVHelper.mm in Sources */,
+				07F9A08D25B80CDC00051888 /* CSJScanResultViewController.mm in Sources */,
+				07F9A0A425B80D0D00051888 /* MainViewController.m in Sources */,
 				978B8F6F1D3862AE00F588F7 /* AppDelegate.m in Sources */,
 				97C146F31CF9000F007C117D /* main.m in Sources */,
+				07F9A0A325B80D0D00051888 /* WebVC.m in Sources */,
+				07F9A09625B80CDC00051888 /* NewCropViewController.mm in Sources */,
+				07F9A08C25B80CDC00051888 /* MMCropView.m in Sources */,
+				07F9A08925B80CDC00051888 /* UIImage+fixOrientation.m in Sources */,
+				07F9A09125B80CDC00051888 /* VCLabelSticker.swift in Sources */,
+				07F9A08825B80CDC00051888 /* UIColor+HexRepresentation.m in Sources */,
+				07F9A0A225B80D0D00051888 /* Test2ViewController.m in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
+				07F9A09425B80CDC00051888 /* VCBaseSticker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,20 +539,27 @@
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
+				DEVELOPMENT_TEAM = F7YBM7MWE6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterNewocrDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Profile;
@@ -426,20 +674,28 @@
 			baseConfigurationReference = 9740EEB21CF90195004384FC /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
+				DEVELOPMENT_TEAM = F7YBM7MWE6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterNewocrDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -449,20 +705,27 @@
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
+				DEVELOPMENT_TEAM = F7YBM7MWE6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterNewocrDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

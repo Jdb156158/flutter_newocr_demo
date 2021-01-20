@@ -1,0 +1,33 @@
+PODS:
+  - camera (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+  - Masonry (1.1.0)
+  - OpenCV2 (4.3.0)
+
+DEPENDENCIES:
+  - camera (from `.symlinks/plugins/camera/ios`)
+  - Flutter (from `Flutter`)
+  - Masonry
+  - OpenCV2
+
+SPEC REPOS:
+  trunk:
+    - Masonry
+    - OpenCV2
+
+EXTERNAL SOURCES:
+  camera:
+    :path: ".symlinks/plugins/camera/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  camera: a0ca5080336f7af47b88436e5e26da3dee5568f0
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  OpenCV2: ffe82e5cb5d16dc3fc01a5f4127b9a5b3cfc7d1b
+
+PODFILE CHECKSUM: 3dc3934d90188677fb1f6d86511da167f9e3c1fc
+
+COCOAPODS: 1.10.0

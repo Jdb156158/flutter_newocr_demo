@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "WeChat0652f34b7e5e46c576fa9dec07809061.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

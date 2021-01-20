@@ -1,16 +1,28 @@
-# flutter_newocr_demo
+# 全能扫描王OCR目前已有功能
+- 文字翻译，支持多国语言
+- 图片文字识别结果自动存档（历史记录）
+- 单张、多张批量图片扫描识别出文字，支持图文校对、编辑修改文本
 
-A new Flutter application.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+# 全能扫描王OCR新增调研功能
+- 自动巡边裁剪功能【预估结束日期：2012-1-20】
+- 电子签名功能【结束日期：2012-1-13】
+- 图片转PDF功能【预估结束日期：2012-1-25】
+- 添加水印功能【预估结束日期：2012-1-26】
+- 表格图片扫描后转换为exsl，并可二次编辑【预估结束日期：2012-1-22】
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# 目前调研已经实现功能
+
+- 电子签名功能
+    1. 使用opencv将图片灰度处理
+    2. 使用opencv进行二值化处理
+    3. 使用opencv进行通道背景透明处理
+
+- 自动巡边裁剪功能
+    1. 使用opencv进行图像多主体轮廓检测：分别得出（x,y,width,height）
+    2. 默认取宽高最大的主体轮廓进行框选
+    3. 裁剪框选框8点手势可进行拖拽，进行精修
+    4. 用户确人后裁剪框内图片输出
