@@ -32,6 +32,7 @@
 		07F9A0A325B80D0D00051888 /* WebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A09B25B80D0D00051888 /* WebVC.m */; };
 		07F9A0A425B80D0D00051888 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A09E25B80D0D00051888 /* MainViewController.m */; };
 		07F9A0A525B80D0D00051888 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F9A09F25B80D0D00051888 /* TestViewController.m */; };
+		07F9A0E825B96D4B00051888 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F9A0E725B96D3500051888 /* libsqlite3.tbd */; };
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		8EBAD6E54B5C8EEEAB47A594 /* libPods-Runner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC3CFDB9E06924C1EC8D95C /* libPods-Runner.a */; };
@@ -98,6 +99,7 @@
 		07F9A09E25B80D0D00051888 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		07F9A09F25B80D0D00051888 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		07F9A0A025B80D0D00051888 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		07F9A0E725B96D3500051888 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F9A0E825B96D4B00051888 /* libsqlite3.tbd in Frameworks */,
 				8EBAD6E54B5C8EEEAB47A594 /* libPods-Runner.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +212,7 @@
 		37803410CBFC5F030B6C0B94 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07F9A0E725B96D3500051888 /* libsqlite3.tbd */,
 				BFC3CFDB9E06924C1EC8D95C /* libPods-Runner.a */,
 			);
 			name = Frameworks;

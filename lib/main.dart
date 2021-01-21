@@ -3,8 +3,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
 import 'package:flutter_newocr_demo/handsignature.dart';
+import 'package:flutter_newocr_demo/service_helpers.dart';
+import 'package:progress_dialog/progress_dialog.dart';
+import 'package:flutter_newocr_demo/web_view_component.dart';
+
+import 'dart:io';
+import 'package:dio/dio.dart';
+import 'package:permission_handler/permission_handler.dart';
+//文件下载路径相关
+import 'package:path_provider/path_provider.dart';
 
 void main() => runApp(MyApp());
+
+final GlobalKey<NavigatorState> navigatorKey = new GlobalKey<NavigatorState>();
+
 
 class MyApp extends StatefulWidget {
   @override
@@ -24,7 +36,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     print(context.findRootAncestorStateOfType());
     return MaterialApp(
-        home: _HomePage()
+        home: _HomePage(),
+        navigatorKey: navigatorKey,
     );
   }
 
@@ -34,12 +47,43 @@ class _HomePage extends StatelessWidget{
 
   static const MethodChannel _methodChannel = MethodChannel('flutter_native_ios');
 
+  ProgressDialog pr;
+
   List _iosResultsList = [
     {'title' : '电子签名','desc' : '拍照、相册图片选择、手写'},
     {'title' : '图片自动巡边裁剪','desc' : '裁剪框8点手势支持不规则裁剪'},
     {'title' : '图片转Pdf','desc' : '单图、多图情况'},
     {'title' : '水印添加','desc' : '文档添加水印'},
-    {'title' : '表格扫描转为exsl','desc' : '对转换的exsl可以进行修改'}];
+    {'title' : '表格扫描转为excel','desc' : '对转换的exsl可以进行修改'}];
+
+  Future<void> _pushExcelView(BuildContext context) async {
+    final String base64Str = await _methodChannel
+        .invokeMethod("flutter_push_to_ExslView", {"url": ""});
+    if (base64Str.length > 0) {
+      print("转换成功的数据是：$base64Str");
+      if (pr == null) {
+        _initProgressDialog(context);
+      }
+      pr.show();
+      var ocrEntity = await ServiceApi.getOrcExcel(base64Str);
+      if (ocrEntity.result_data.length > 0) {
+        pr.hide();
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => WebViewComponent(ocrEntity.result_data)
+          ),
+        );
+
+      } else {
+        pr.hide();
+        print("调取百度接口没有转换成功");
+      }
+    } else {
+      print("没有转换成功");
+    }
+  }
 
   List<Widget> _infoListView(BuildContext context) {
     var list = _iosResultsList.map((value) {
@@ -58,13 +102,26 @@ class _HomePage extends StatelessWidget{
 
           }else if(value["title"] == "水印添加"){
 
-          }else if(value["title"] == "表格扫描转为exsl"){
+          }else if(value["title"] == "表格扫描转为excel"){
+            //_pushExcelView(context);
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(
+            //       builder: (context) => WebViewComponent("https://kdocs.cn/l/snR9ao6f6g1N")
+            //   ),
+            // );
+            //_doDownloadOperation(context,"https://ytools.xyz/0039MnYb0qxYhV.mp3");
 
+            _doDownloadOperation(context, "http://bj.bcebos.com/v1/ai-edgecloud/3C4DCEB30D964D7C880F2E74771C9349.xls?authorization=bce-auth-v1%2Ff86a2044998643b5abc89b59158bad6d%2F2021-01-21T06%3A29%3A21Z%2F172800%2F%2Fe6200f579492d7c0f1b166e878a5c97800f8b8f1be7c0cd332315fd230523241");
           }
         },
       );
     });
     return list.toList();
+  }
+
+  _initProgressDialog(BuildContext context) {
+    pr = new ProgressDialog(context);
   }
 
   _showActionSheet(BuildContext context) {
@@ -121,6 +178,89 @@ class _HomePage extends StatelessWidget{
         );
       },
     );
+  }
+
+  // 执行下载文件的操作
+  _doDownloadOperation(BuildContext context,downloadUrl) async {
+    /**
+     * 下载文件的步骤：
+     * 1. 获取权限：网络权限、存储权限
+     * 2. 获取下载路径
+     * 3. 设置下载回调
+     */
+
+    // 获取权限
+    var isPermissionReady = await _checkPermission(context);
+    if (isPermissionReady) {
+      // 获取存储路径
+      var _localPath = (await _findLocalPath(context)) + '/Download';
+
+      final savedDir = Directory(_localPath);
+      // 判断下载路径是否存在
+      bool hasExisted = await savedDir.exists();
+      // 不存在就新建路径
+      if (!hasExisted) {
+        savedDir.create();
+      }
+      // 下载
+      _downloadFile(downloadUrl, _localPath);
+    } else {
+      print("您还没有获取权限");
+    }
+  }
+
+  // 申请权限
+  Future<bool> _checkPermission(BuildContext context) async {
+    // 先对所在平台进行判断
+    if (Theme.of(context).platform == TargetPlatform.android) {
+      PermissionStatus permission = await PermissionHandler()
+          .checkPermissionStatus(PermissionGroup.storage);
+      if (permission != PermissionStatus.granted) {
+        Map<PermissionGroup, PermissionStatus> permissions =
+        await PermissionHandler()
+            .requestPermissions([PermissionGroup.storage]);
+        if (permissions[PermissionGroup.storage] == PermissionStatus.granted) {
+          return true;
+        }
+      } else {
+        return true;
+      }
+    } else {
+      return true;
+    }
+    return false;
+  }
+
+  // 获取存储路径
+  Future<String> _findLocalPath(BuildContext context) async {
+    // 因为Apple没有外置存储，所以第一步我们需要先对所在平台进行判断
+    // 如果是android，使用getExternalStorageDirectory
+    // 如果是iOS，使用getApplicationSupportDirectory
+    final directory = Theme.of(context).platform == TargetPlatform.android
+        ? await getExternalStorageDirectory()
+        : await getApplicationSupportDirectory();
+    return directory.path;
+  }
+
+  // 根据 downloadUrl 和 savePath 下载文件
+  _downloadFile(downloadUrl, savePath) async {
+
+    String newsavePath = savePath + "/temp.xlsx";
+    print("开始下载文件downloadUrl：$downloadUrl  savePath: $newsavePath");
+
+    //使用 dio 下载文件
+    await Dio().download(downloadUrl, newsavePath,
+        onReceiveProgress: (receivedBytes, totalBytes) {
+          // 4、连接资源成功开始下载后更新状态
+          double progress = (receivedBytes / totalBytes);
+          print("下载进度:$progress");
+        });
+
+  }
+
+  // 根据taskId打开下载文件
+  Future<bool> _openDownloadedFile(taskId) {
+    //return FlutterDownloader.open(taskId: taskId);
   }
 
   @override

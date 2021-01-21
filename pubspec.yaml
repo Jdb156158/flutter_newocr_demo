@@ -28,8 +28,25 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
+  dio:
+
+  #相机拍照
   camera: ^0.5.4+1
-  hand_signature: ^0.6.3 #支持svg和png格式导出
+
+  #支持svg和png格式导出
+  hand_signature: ^0.6.3
+
+  #加载动画
+  progress_dialog: ^1.2.0
+
+  #加载网页
+  webview_flutter:
+
+  #本地路径获取
+  path_provider:
+
+  #平台判断
+  permission_handler: ^3.1.0
 
 dev_dependencies:
   flutter_test:

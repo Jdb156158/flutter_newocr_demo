@@ -27,6 +27,8 @@
 #define flutterMethodPushCSJIDScanView  @"flutter_push_to_CSJIDScanView"
 //拍照自动巡边
 #define flutterMethodPushCropView  @"flutter_push_to_CropView"
+//Exsl扫描
+#define flutterMethodPushExslView  @"flutter_push_to_ExslView"
 
 @interface MainViewController ()
 
@@ -86,6 +88,29 @@
             [weakSelf takePicture];
         }else if ([method isEqualToString:flutterMethodPushCropView]) {
             [weakSelf jumpCropView];
+        }else if([method isEqualToString:flutterMethodPushExslView]){
+            
+            CSJScanIDCardViewController * scVC = [[CSJScanIDCardViewController alloc]init];
+            scVC.imageBackBlock = ^(UIImage * _Nonnull image) {
+                
+                CGFloat compression = 0.9f;
+                CGFloat maxCompression = 0.3f;
+                int maxFileSize = 4*1024*1024;//最大4z
+
+                NSData *imageData = UIImageJPEGRepresentation(image, compression);
+
+                while ([imageData length] > maxFileSize && compression > maxCompression)
+                {
+                    compression -= 0.05;
+                    imageData = UIImageJPEGRepresentation(image, compression);
+                }
+                
+                NSLog(@"Size of Image:%lu kb",(unsigned long)[imageData length]/1024);
+                //UIImage转换为base64
+                NSString *base64Str = [imageData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+                result(base64Str);
+            };
+            [weakSelf.navigationController pushViewController:scVC animated:YES];
         }
         
     }];
