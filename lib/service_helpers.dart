@@ -35,8 +35,6 @@ class ServiceApi {
       print("=========获取百度转换后的数据1：$jsonMap");
 
       var ocrEntity = OcrExcelEntity.fromJson(jsonMap);
-
-      print("=========获取百度转换后的数据2：${ocrEntity.result_data}");
       return ocrEntity;
     }else{
       return null;

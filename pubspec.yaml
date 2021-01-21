@@ -48,6 +48,10 @@ dependencies:
   #平台判断
   permission_handler: ^3.1.0
 
+  flutter_file_preview:
+    git:
+      url: git://github.com/aliyoge/flutter_file_preview.git
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,39 +1,40 @@
 //
-//  WebVC.m
-//  Thunder
+//  Web2ViewController.m
+//  Runner
 //
-//  Created by 鞠汶成 on 2018/11/24.
-//  Copyright © 2018 Lance Wu. All rights reserved.
+//  Created by db J on 2021/1/21.
 //
 
-#import "WebVC.h"
+#import "Web2ViewController.h"
 #import <WebKit/WebKit.h>
 
-@interface WebVC ()<WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler>
+@interface Web2ViewController ()<WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler>
 
 @property(nonatomic, copy) NSString *originalUrl;
 @property(nonatomic, strong) WKWebView *webView;
 
 @end
 
-@implementation WebVC
-
+@implementation Web2ViewController
 - (instancetype)initWithUrlString:(NSString *)urlString {
     if (self = [super init]) {
-        _originalUrl = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        _originalUrl = urlString;
     }
     return self;
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
     self.view.backgroundColor = [UIColor whiteColor];
     [self setupWebView];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(dismissVC)];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.originalUrl] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
-    [self.webView loadRequest:request];
-    
+    NSURL *url = [NSURL fileURLWithPath:self.originalUrl];
+    [self.webView loadFileURL:url allowingReadAccessToURL:[url URLByDeletingLastPathComponent]];
+//
+//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.originalUrl] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
+//    [self.webView loadRequest:request];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -80,5 +81,4 @@
 - (void)userContentController:(nonnull WKUserContentController *)userContentController didReceiveScriptMessage:(nonnull WKScriptMessage *)message {
     NSLog(@"未实现");
 }
-
 @end

@@ -29,6 +29,8 @@
 #define flutterMethodPushCropView  @"flutter_push_to_CropView"
 //Exsl扫描
 #define flutterMethodPushExslView  @"flutter_push_to_ExslView"
+//web
+#define flutterMethodPushWebView  @"flutter_push_to_WebView"
 
 @interface MainViewController ()
 
@@ -111,6 +113,11 @@
                 result(base64Str);
             };
             [weakSelf.navigationController pushViewController:scVC animated:YES];
+        }else if([method isEqualToString:flutterMethodPushWebView]){
+                        
+            NSString *url = call.arguments[@"url"];
+            UIViewController *vc = [[WebVC alloc] initWithUrlString:url];
+            [weakSelf.navigationController pushViewController:vc animated:YES];
         }
         
     }];

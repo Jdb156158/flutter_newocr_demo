@@ -13,6 +13,9 @@ import 'package:permission_handler/permission_handler.dart';
 //文件下载路径相关
 import 'package:path_provider/path_provider.dart';
 
+//办公文件预览
+import 'package:flutter_file_preview/flutter_file_preview.dart';
+
 void main() => runApp(MyApp());
 
 final GlobalKey<NavigatorState> navigatorKey = new GlobalKey<NavigatorState>();
@@ -66,19 +69,27 @@ class _HomePage extends StatelessWidget{
       }
       pr.show();
       var ocrEntity = await ServiceApi.getOrcExcel(base64Str);
-      if (ocrEntity.result_data.length > 0) {
+      if (ocrEntity.result_data.length > 0 && ocrEntity.ret_code == 3) {
         pr.hide();
 
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => WebViewComponent(ocrEntity.result_data)
-          ),
-        );
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(
+        //     builder: (context) => WebViewComponent(ocrEntity.result_data)
+        //   ),
+        // );
+
+        //下载到本地
+        //_doDownloadOperation(context,ocrEntity.result_data);
+
+        //直接网络加载
+        _methodChannel
+            .invokeMethod("flutter_push_to_WebView", {"url": ocrEntity.result_data});
 
       } else {
         pr.hide();
         print("调取百度接口没有转换成功");
+
       }
     } else {
       print("没有转换成功");
@@ -103,16 +114,27 @@ class _HomePage extends StatelessWidget{
           }else if(value["title"] == "水印添加"){
 
           }else if(value["title"] == "表格扫描转为excel"){
-            //_pushExcelView(context);
+
+            _pushExcelView(context);
+
+            //自己写的网络加载
+            // _methodChannel
+            //     .invokeMethod("flutter_push_to_WebView", {"url": "http://bj.bcebos.com/v1/ai-edgecloud/3C4DCEB30D964D7C880F2E74771C9349.xls?authorization=bce-auth-v1%2Ff86a2044998643b5abc89b59158bad6d%2F2021-01-21T06%3A29%3A21Z%2F172800%2F%2Fe6200f579492d7c0f1b166e878a5c97800f8b8f1be7c0cd332315fd230523241"});
+
+            //网络加载
+            // FlutterFilePreview.openFile(
+            //     "http://bj.bcebos.com/v1/ai-edgecloud/3C4DCEB30D964D7C880F2E74771C9349.xls?authorization=bce-auth-v1%2Ff86a2044998643b5abc89b59158bad6d%2F2021-01-21T06%3A29%3A21Z%2F172800%2F%2Fe6200f579492d7c0f1b166e878a5c97800f8b8f1be7c0cd332315fd230523241",
+            //     title: 'Online Xls');
+
+            //本地加载
+            //FlutterFilePreview.openFile("/var/mobile/Containers/Data/Application/A5C17D4D-27E4-455D-9924-60CCC6E548F0/Library/Application Support/Download/temp.Xls", title: 'Temp Xls');
+
             // Navigator.push(
             //   context,
             //   MaterialPageRoute(
             //       builder: (context) => WebViewComponent("https://kdocs.cn/l/snR9ao6f6g1N")
             //   ),
             // );
-            //_doDownloadOperation(context,"https://ytools.xyz/0039MnYb0qxYhV.mp3");
-
-            _doDownloadOperation(context, "http://bj.bcebos.com/v1/ai-edgecloud/3C4DCEB30D964D7C880F2E74771C9349.xls?authorization=bce-auth-v1%2Ff86a2044998643b5abc89b59158bad6d%2F2021-01-21T06%3A29%3A21Z%2F172800%2F%2Fe6200f579492d7c0f1b166e878a5c97800f8b8f1be7c0cd332315fd230523241");
           }
         },
       );
@@ -245,7 +267,7 @@ class _HomePage extends StatelessWidget{
   // 根据 downloadUrl 和 savePath 下载文件
   _downloadFile(downloadUrl, savePath) async {
 
-    String newsavePath = savePath + "/temp.xlsx";
+    String newsavePath = savePath + "/temp.Xls";
     print("开始下载文件downloadUrl：$downloadUrl  savePath: $newsavePath");
 
     //使用 dio 下载文件
@@ -254,6 +276,9 @@ class _HomePage extends StatelessWidget{
           // 4、连接资源成功开始下载后更新状态
           double progress = (receivedBytes / totalBytes);
           print("下载进度:$progress");
+          if(progress>=1){
+            FlutterFilePreview.openFile(newsavePath, title: 'Temp Xls');
+          }
         });
 
   }
