@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+typedef void(^CropFinshBlock)(UIImage *finalCropImage);
+
 @interface NewCropViewController : UIViewController{
     CGFloat _rotateSlider;
     CGRect _initialRect,final_Rect;
@@ -26,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak,nonatomic) id<MMCropDelegate> cropdelegate;
 
 @property (strong, nonatomic) UIImage *adjustedImage,*cropgrayImage,*cropImage;
+
+@property(atomic,copy) CropFinshBlock myCropBlock;
 
 @end
 

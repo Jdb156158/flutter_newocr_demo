@@ -25,6 +25,8 @@
 @property (strong, nonatomic) UIImageView *sourceImageView;
 
 @property (strong, nonatomic) MMCropView *cropRect;
+@property (weak, nonatomic) IBOutlet UIButton *cropBtn;
+@property (weak, nonatomic) IBOutlet UIButton *OkBtn;
 
 @end
 
@@ -407,6 +409,17 @@ cv::Mat debugSquares( std::vector<std::vector<cv::Point> > squares, cv::Mat imag
     return image;
 }
 
+// 点击确认
+- (IBAction)clickOkBtn:(id)sender {
+    [self.cropdelegate didFinishCropping:_sourceImageView.image from:self];
+    
+    if (self.myCropBlock) {
+        self.myCropBlock(_sourceImageView.image);
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 // 裁剪图片
 - (IBAction)cropAction:(id)sender {
     
@@ -465,7 +478,9 @@ cv::Mat debugSquares( std::vector<std::vector<cv::Point> > squares, cv::Mat imag
         self.cropImage = self.sourceImageView.image;
 
     } completion:^(BOOL finished) {
-        self.cropRect.hidden=YES;
+        self.cropBtn.hidden = YES;
+        self.OkBtn.hidden = NO;
+        self.cropRect.hidden = YES;
         [UIView animateWithDuration:0.5 animations:^{
             self.scrollView.frame=CGRectMake(0, 0, self.view.bounds.size.width, 64);
 
@@ -532,9 +547,6 @@ cv::Mat debugSquares( std::vector<std::vector<cv::Point> > squares, cv::Mat imag
 
 }
 
-- (IBAction)dismissAction:(id)sender {
-       [self.cropdelegate didFinishCropping:_sourceImageView.image from:self];
-}
 
 // 顺时针裁剪图片
 - (IBAction)rightRotateAction:(id)sender {

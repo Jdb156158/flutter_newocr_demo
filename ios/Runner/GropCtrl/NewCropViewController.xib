@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewCropViewController">
             <connections>
+                <outlet property="OkBtn" destination="4hp-sP-tIH" id="Wdw-ZI-7Gy"/>
+                <outlet property="cropBtn" destination="HrP-Vy-Rhe" id="RpO-1b-VkU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,11 +32,24 @@
                         <action selector="cropAction:" destination="-1" eventType="touchUpInside" id="Aqi-1p-u8u"/>
                     </connections>
                 </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hp-sP-tIH">
+                    <rect key="frame" x="329" y="817" width="45" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="45" id="0hl-bz-4ge"/>
+                        <constraint firstAttribute="height" constant="45" id="yFx-yy-jut"/>
+                    </constraints>
+                    <state key="normal" title="确认"/>
+                    <connections>
+                        <action selector="clickOkBtn:" destination="-1" eventType="touchUpInside" id="6ev-dm-Her"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="HrP-Vy-Rhe" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="Bsb-Rr-ABf"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="4hp-sP-tIH" secondAttribute="trailing" constant="40" id="QmO-yg-MLB"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="4hp-sP-tIH" secondAttribute="bottom" id="rNy-nG-lra"/>
                 <constraint firstItem="HrP-Vy-Rhe" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="w7U-g2-Lm5"/>
             </constraints>
             <point key="canvasLocation" x="141" y="83"/>

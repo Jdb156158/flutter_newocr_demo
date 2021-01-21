@@ -91,28 +91,7 @@
         }else if ([method isEqualToString:flutterMethodPushCropView]) {
             [weakSelf jumpCropView];
         }else if([method isEqualToString:flutterMethodPushExslView]){
-            
-            CSJScanIDCardViewController * scVC = [[CSJScanIDCardViewController alloc]init];
-            scVC.imageBackBlock = ^(UIImage * _Nonnull image) {
-                
-                CGFloat compression = 0.9f;
-                CGFloat maxCompression = 0.3f;
-                int maxFileSize = 4*1024*1024;//最大4z
-
-                NSData *imageData = UIImageJPEGRepresentation(image, compression);
-
-                while ([imageData length] > maxFileSize && compression > maxCompression)
-                {
-                    compression -= 0.05;
-                    imageData = UIImageJPEGRepresentation(image, compression);
-                }
-                
-                NSLog(@"Size of Image:%lu kb",(unsigned long)[imageData length]/1024);
-                //UIImage转换为base64
-                NSString *base64Str = [imageData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
-                result(base64Str);
-            };
-            [weakSelf.navigationController pushViewController:scVC animated:YES];
+            [weakSelf jumpExslView:result];
         }else if([method isEqualToString:flutterMethodPushWebView]){
                         
             NSString *url = call.arguments[@"url"];
@@ -143,6 +122,42 @@
     [self.navigationController pushViewController:scVC animated:YES];
 }
 
+- (void)jumpExslView:(FlutterResult)result{
+    CSJScanIDCardViewController * scVC = [[CSJScanIDCardViewController alloc]init];
+    scVC.imageBackBlock = ^(UIImage * _Nonnull image) {
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NewCropViewController *cropViewCtr = [[NewCropViewController alloc] init];
+            cropViewCtr.adjustedImage = image;
+            cropViewCtr.myCropBlock = ^(UIImage * _Nonnull finalCropImage) {
+                
+                CGFloat compression = 0.9f;
+                CGFloat maxCompression = 0.3f;
+                int maxFileSize = 4*1024*1024;//最大4z
+
+                NSData *imageData = UIImageJPEGRepresentation(image, compression);
+
+                while ([imageData length] > maxFileSize && compression > maxCompression)
+                {
+                    compression -= 0.05;
+                    imageData = UIImageJPEGRepresentation(image, compression);
+                }
+
+                NSLog(@"Size of Image:%lu kb",(unsigned long)[imageData length]/1024);
+                //UIImage转换为base64
+                NSString *base64Str = [imageData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+                result(base64Str);
+                
+            };
+            [self.navigationController pushViewController:cropViewCtr animated:YES];
+        });
+        
+        
+        
+    };
+    [self.navigationController pushViewController:scVC animated:YES];
+}
+
 - (void)jumpCropView{
     CSJScanIDCardViewController * scVC = [[CSJScanIDCardViewController alloc]init];
     scVC.imageBackBlock = ^(UIImage * _Nonnull image) {
@@ -154,7 +169,6 @@
 - (void)jumpCropResult:(UIImage *)image{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NewCropViewController *cropViewCtr = [[NewCropViewController alloc] init];
-        //UIImage *image = [UIImage imageNamed:@"testtwo"];
         cropViewCtr.adjustedImage = image;
         [self.navigationController pushViewController:cropViewCtr animated:YES];
     });
